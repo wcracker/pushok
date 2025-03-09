@@ -35,7 +35,7 @@ Or you can follow [this tutorial](https://nathanleclaire.com/blog/2016/08/11/cur
 Via Composer
 
 ``` bash
-$ composer require edamov/pushok
+$ composer require wcracker/pushok
 ```
 
 ## Getting Started
@@ -96,7 +96,7 @@ foreach ($responses as $response) {
     $response->getDeviceToken();
     // A canonical UUID that is the unique ID for the notification. E.g. 123e4567-e89b-12d3-a456-4266554400a0
     $response->getApnsId();
-    
+    $response->getApnsUniqueId();
     // Status code. E.g. 200 (Success), 410 (The device token is no longer active for the topic.)
     $response->getStatusCode();
     // E.g. The device token is no longer active for the topic.
