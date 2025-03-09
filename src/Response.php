@@ -113,6 +113,12 @@ class Response implements ApnsResponseInterface
     private $apnsId;
 
     /**
+     * APNs Unique Id
+     * @var string|null
+     */
+    private $apnsUniqueId;
+
+    /**
      * Device token.
      *
      * @var string|null
@@ -152,6 +158,7 @@ class Response implements ApnsResponseInterface
     {
         $this->statusCode = $statusCode;
         $this->apnsId = self::fetchApnsId($headers);
+        $this->apnsUniqueId = self::fetchApnsUniqueId($headers);
         $this->errorReason = self::fetchErrorReason($body);
         $this->error410Timestamp = self::fetch410Timestamp($statusCode, $body);
         $this->deviceToken = $deviceToken;
@@ -171,6 +178,29 @@ class Response implements ApnsResponseInterface
             $middle = explode(":", $part);
 
             if ($middle[0] !== 'apns-id') {
+                continue;
+            }
+
+            return trim($middle[1]);
+        }
+
+        return '';
+    }
+
+    /**
+     * Fetch APNs Unique Id from response headers.
+     *
+     * @param string $headers
+     * @return string
+     */
+    private static function fetchApnsUniqueId(string $headers): string
+    {
+        $data = explode("\n", trim($headers));
+
+        foreach ($data as $part) {
+            $middle = explode(":", $part);
+
+            if ($middle[0] !== 'apns-unique-id') {
                 continue;
             }
 
