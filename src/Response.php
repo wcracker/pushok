@@ -248,6 +248,16 @@ class Response implements ApnsResponseInterface
     }
 
     /**
+     * Get APNs Unique Id
+     *
+     * @return string|null
+     */
+    public function getApnsUniqueId()
+    {
+        return $this->apnsUniqueId;
+    }
+
+    /**
      * Get device token
      *
      * @return string|null
