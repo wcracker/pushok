@@ -7,9 +7,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/edamov/pushok/badge.svg?branch=master)](https://coveralls.io/github/edamov/pushok?branch=master)
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Software License][ico-license]](LICENSE.md)
-[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
-## Do you like the library? Please consider [donating](https://www.buymeacoffee.com/uasupport) to support Ukraine 🇺🇦
+fix apns-unique-id
 
 Pushok is a simple PHP library for sending push notifications to APNs. 
 
